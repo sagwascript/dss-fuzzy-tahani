@@ -49,7 +49,7 @@
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-background-color="white" data-active-color="danger">
+    <div class="sidebar" data-background-color="black" data-active-color="success">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -67,25 +67,25 @@
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi A</p>
+                        <p>Fuzzifikasi Jenis Pekerjaan</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi B</p>
+                        <p>Fuzzifikasi Kondisi Rumah</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi C</p>
+                        <p>Fuzzifikasi Penghasilan</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi D</p>
+                        <p>Fuzzifikasi Tanggungan</p>
                     </a>
                 </li>
                 <li>
@@ -119,10 +119,10 @@
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="pangkat">Setting Variabel A</a></li>
-                                <li><a href="eselon">Setting Variabel B</a></li>
-                                <li><a href="jabatan">Setting Variabel C</a></li>
-                                <li><a href="bidang">Setting Variabel D</a></li>
+                                <li><a href="pangkat">Setting Variabel Jenis Pekerjaan</a></li>
+                                <li><a href="eselon">Setting Variabel Kondisi Rumah</a></li>
+                                <li><a href="jabatan">Setting Variabel Penghasilan</a></li>
+                                <li><a href="bidang">Setting Variabel Tanggungan</a></li>
                               </ul>
                         </li>
                     </ul>
@@ -142,15 +142,6 @@
                 </div>
             </div>
         </div>
-        
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> oleh Dispendukcapil Kabupaten Bangkalan
-                </div>
-            </div>
-        </footer>
     </div>
 </div>
 </body>
