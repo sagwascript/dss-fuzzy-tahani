@@ -13,7 +13,7 @@ if ($_GET['aksi']==proses) {
 		
 		echo "$id , $nx , $ny <br>";
 	}
-      echo "Proses Defuzzifikasi Selesai..!";
+	echo "Proses Defuzzifikasi Selesai..!";
 }
 
 //============================================================================================================================= proses fuzzifikasi
