@@ -1,21 +1,33 @@
 <?php
-	function derajat_keanggotaan($nilai, $bawah, $tengah, $atas) {
+	function derajat_keanggotaan($nilai, $bawah, $tengah, $atas)
+		{
 			$selisih=$atas-$bawah;
-			if($nilai<$bawah) {
-				$DA=0;
-			} elseif(($nilai>=$bawah) && ($nilai<=$tengah)) {
-				if ($bawah<=0) {
-					$DA=1;
-				} else {
-					$DA=($nilai-$bawah) / ($tengah-$bawah);
+			if($nilai<$bawah)
+				{
+					$DA=0;
 				}
-			} elseif(($nilai>$tengah) && ($nilai<=$atas)) {
-				$DA=($atas-$nilai) / ($atas-$tengah);
-			} elseif($nilai>$atas) {
-				$DA=0;
-			}
+			elseif(($nilai>=$bawah) && ($nilai<=$tengah))
+				{
+					if($bawah<=0)
+						{
+							$DA=1;
+						}
+					else
+						{
+							$DA=($nilai-$bawah) / ($tengah-$bawah);
+						}
+				}
+			elseif(($nilai>$tengah) && ($nilai<=$atas))
+				{
+					$DA=($atas-$nilai) / ($atas-$tengah);
+				}
+			elseif($nilai>$atas)
+				{
+					$DA=0;
+				}
 			return $DA;
-	}
+
+		}
 	$variabel		=isset($_GET['variabel'])?$_GET['variabel']*1:0;
 	$sql_variabel	="SELECT * FROM tbl_variabel WHERE id='$variabel'";
 	$hasil_variabel	=mysqli_query($con, $sql_variabel);
@@ -41,11 +53,11 @@ echo"</table><br>
 
 if ($_GET['aksi']==himpunan) {
 	if ($_GET['di']==simpan) {
-		$id=$_POST['id'];
-		mysqli_query($con, " update tbl_himpunan SET
-		nama_himpunan='$_POST[nama]',bawah='$_POST[b]',tengah='$_POST[t]',atas='$_POST[a]' where id='$_POST[ids]'");
-		echo "Data Siswa Telah Disimpan.";
-		echo "<meta http-equiv=Refresh content=1;url=index.php?aksi=himpunan&id=$id";
+	$id=$_POST['id'];
+	mysqli_query($con, " update tbl_himpunan SET
+	nama_himpunan='$_POST[nama]',bawah='$_POST[b]',tengah='$_POST[t]',atas='$_POST[a]' where id='$_POST[ids]'");
+	echo "Data Siswa Telah Disimpan.";
+	echo "<meta http-equiv=Refresh content=1;url=index.php?aksi=himpunan&id=$id";
 	}
 	if ($_GET['di']==edit) {
 	  $sethf=mysqli_query($con, "SELECT * FROM tbl_himpunan where id='$_GET[ids]'");
@@ -64,46 +76,46 @@ if ($_GET['aksi']==himpunan) {
 		</form> <br>";
 	}
 
-	echo "<h2>Setting</h2>";
-	$seth=mysqli_query($con, "SELECT * FROM tbl_himpunan where kelompok='$_GET[id]'");
-	$noh=0;
-	echo "<table border=1> <tr bgcolor=#9DC5FF> <td>No. </td> <td>Himpunan Fuzzy</td> <td>Domain</td> <td>Aksi</td></tr>";
-	while ($setrh=mysqli_fetch_array($seth))
-	{ $noh++;
-	echo "<tr> <td>$noh. </td> <td>$setrh[nama_himpunan]</td> <td>$setrh[bawah] | $setrh[tengah] | $setrh[atas]</td> <td><a href=?aksi=himpunan&di=edit&id=$_GET[id]&ids=$setrh[id]>Edit</td></tr>";
-	}
-	echo"</table><br>
-	";
+echo "<h2>Setting</h2>";
+  $seth=mysqli_query($con, "SELECT * FROM tbl_himpunan where kelompok='$_GET[id]'");
+  $noh=0;
+  echo "<table border=1> <tr bgcolor=#9DC5FF> <td>No. </td> <td>Himpunan Fuzzy</td> <td>Domain</td> <td>Aksi</td></tr>";
+  while ($setrh=mysqli_fetch_array($seth))
+  { $noh++;
+  echo "<tr> <td>$noh. </td> <td>$setrh[nama_himpunan]</td> <td>$setrh[bawah] | $setrh[tengah] | $setrh[atas]</td> <td><a href=?aksi=himpunan&di=edit&id=$_GET[id]&ids=$setrh[id]>Edit</td></tr>";
+  }
+echo"</table><br>
+";
 }
 
 
 if ($_GET['aksi']==tambah) {
-	echo "<h2>Tambah Data Siswa</h2>
-	<form method=POST action='?aksi=simpan'>
-			<table>
-			<tr><td>Nama</td><td> : <input type=text name='nama' size=30></td></tr>
-			<tr><td>Nilai</td><td> : <input type=text name='nilai' size=5></td></tr>
-			<tr><td>Minat Belajar</td><td>  : <input type=text name='minat' size=5></td></tr>
-			<tr><td colspan=2><input type=submit value=Simpan></td></tr>
-			</table>
-	</form> <br>";
+echo "<h2>Tambah Data Siswa</h2>
+<form method=POST action='?aksi=simpan'>
+          <table>
+          <tr><td>Nama</td><td> : <input type=text name='nama' size=30></td></tr>
+          <tr><td>Nilai</td><td> : <input type=text name='nilai' size=5></td></tr>
+          <tr><td>Minat Belajar</td><td>  : <input type=text name='minat' size=5></td></tr>
+          <tr><td colspan=2><input type=submit value=Simpan></td></tr>
+          </table>
+</form> <br>";
 }
 
 if ($_GET['aksi']==simpan) {
-	$nx=$_POST[nilai];
-	$ny=$_POST[minat];
-	$query = "INSERT INTO tbl_data
-			(nama,nilai,minat_belajar)
-	VALUES ('$_POST[nama]','$nx','$ny')";
-	$result = mysqli_query($con, $query)
-	or die(mysqli_error());
+$nx=$_POST[nilai];
+$ny=$_POST[minat];
+$query = "INSERT INTO tbl_data
+          (nama,nilai,minat_belajar)
+VALUES ('$_POST[nama]','$nx','$ny')";
+$result = mysqli_query($con, $query)
+or die(mysqli_error());
 
-	$sql2	="SELECT * FROM tbl_data ORDER BY id DESC";
-	$hasil2	=mysqli_query($con, $sql2);
-	$row2=mysqli_fetch_array($hasil2);
+$sql2	="SELECT * FROM tbl_data ORDER BY id DESC";
+$hasil2	=mysqli_query($con, $sql2);
+$row2=mysqli_fetch_array($hasil2);
 
-	echo "Data Siswa Telah Disimpan.";
-	echo "<meta http-equiv=Refresh content=1;url=tes.php?idsiswa=$row2[id]&nilai=$nx&minat=$ny>";
+echo "Data Siswa Telah Disimpan.";
+echo "<meta http-equiv=Refresh content=1;url=tes.php?idsiswa=$row2[id]&nilai=$nx&minat=$ny>";
 }
 
 
