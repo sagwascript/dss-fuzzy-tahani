@@ -61,7 +61,13 @@ class Himpunan extends BaseModel {
     }
 
     public function getOne($id) {
-        
+        $query = "SELECT * FROM tbl_himpunan WHERE id = :id";
+        $stmt = self::getDB()->prepare($query);
+        $stmt->execute();
+
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return new Himpunan($result['nama_himpunan'], $result['bawah'], $result['tengah'], $result['atas'], $result['kelompok'])
     }
 
     public function insert($data) {
