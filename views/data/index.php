@@ -7,18 +7,30 @@
         <tr>
             <th>No.</th>
             <th>Nama</th>
-            <th>Jenis Pekerjaan</th>
-            <th>Kondisi Rumah</th>
-            <th>Jumlah Penghasilan</th>
+            <th>Masa Kerja</th>
+            <th>Usia</th>
+            <th>Gaji</th>
             <th>Jumlah Tanggungan</th>
+            <th>Aksi</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>kosong</td>
-            <td>kosong</td>
-            <td>kosong</td>
-            <td>kosong</td>
-            <td>kosong</td>
-        </tr>
+        <?php
+            $no = 1;
+            foreach ($viewModel as $data) {
+        ?>
+                <tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $data->getNama(); ?></td>
+                    <td><?php echo $data->getMasaKerja(); ?> Tahun</td>
+                    <td><?php echo $data->getUsia(); ?> Tahun</td>
+                    <td>Rp. <?php echo $data->getGaji(); ?></td>
+                    <td><?php echo $data->getJumlahTanggungan(); ?></td>
+                    <td>
+                        <a href="data/edit/<?php echo $data->getIdData(); ?>">Ubah</a>
+                        <a href="data/delete/<?php echo $data->getIdData(); ?>">Hapus</a>
+                    </td>
+                </tr>
+        <?php
+            }
+        ?>
     </table>
 </div>

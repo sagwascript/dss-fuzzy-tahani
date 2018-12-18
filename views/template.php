@@ -67,19 +67,19 @@
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi Jenis Pekerjaan</p>
+                        <p>Fuzzifikasi Masa Kerja</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi Kondisi Rumah</p>
+                        <p>Fuzzifikasi Usia</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="ti-panel"></i>
-                        <p>Fuzzifikasi Penghasilan</p>
+                        <p>Fuzzifikasi Gaji</p>
                     </a>
                 </li>
                 <li>
@@ -119,10 +119,10 @@
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="pangkat">Setting Variabel Jenis Pekerjaan</a></li>
-                                <li><a href="eselon">Setting Variabel Kondisi Rumah</a></li>
-                                <li><a href="jabatan">Setting Variabel Penghasilan</a></li>
-                                <li><a href="bidang">Setting Variabel Tanggungan</a></li>
+                                <li><a href="pangkat">Setting Variabel Masa Kerja</a></li>
+                                <li><a href="eselon">Setting Variabel Usia</a></li>
+                                <li><a href="jabatan">Setting Variabel Gaji</a></li>
+                                <li><a href="bidang">Setting Variabel Jumlah Tanggungan</a></li>
                               </ul>
                         </li>
                     </ul>
