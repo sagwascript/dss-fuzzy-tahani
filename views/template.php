@@ -119,10 +119,10 @@
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="pangkat">Setting Variabel Masa Kerja</a></li>
-                                <li><a href="eselon">Setting Variabel Usia</a></li>
-                                <li><a href="jabatan">Setting Variabel Gaji</a></li>
-                                <li><a href="bidang">Setting Variabel Jumlah Tanggungan</a></li>
+                                <li><a href="himpunan/kelompok/1">Setting Variabel Masa Kerja</a></li>
+                                <li><a href="himpunan/kelompok/2">Setting Variabel Usia</a></li>
+                                <li><a href="himpunan/kelompok/3">Setting Variabel Gaji</a></li>
+                                <li><a href="himpunan/kelompok/4">Setting Variabel Jumlah Tanggungan</a></li>
                               </ul>
                         </li>
                     </ul>
