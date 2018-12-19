@@ -136,7 +136,7 @@ echo "<h2>Defuzzifikasi</h2>"; ?>
 							$nx=$rowd[f];
 							$hx=$rowd[idhimpunan];
 
-							echo "<td>$rowd[f]</td>";
+							echo "<td>$rowd[f] $rowd[idhimpunan]</td>";
 						}
 						
 						$sqld1		="SELECT * FROM hasil_fuzzy WHERE idsiswa='$row[id]' and idhimpunan >= '4' and idhimpunan <= '6' ORDER BY f DESC LIMIT 1";
@@ -144,7 +144,7 @@ echo "<h2>Defuzzifikasi</h2>"; ?>
 						while($rowd1=mysqli_fetch_array($hasild1)) {
 							$ny=$rowd1[f];
 							$hy=$rowd1[idhimpunan];
-							echo "<td>$rowd1[f]</td>";
+							echo "<td>$rowd1[f] $rowd1[idhimpunan]</td>";
 						}
 						$zz=$nx+$ny;
 						$zzz=$zz/2;
