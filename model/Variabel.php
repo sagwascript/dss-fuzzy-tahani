@@ -42,19 +42,11 @@ class Variabel extends BaseModel {
         
     }
 
-    public function getOne($id) {
-        
+    public function getByFieldAkses($field_akses) {
+        $query = "SELECT id FROM tbl_variabel WHERE field_akses = :field_akses";
+        $stmt = self::getDB()->prepare($query);
+        $stmt->bindValue(':field_akses', $field_akses);
+        $stmt->execute();
     }
 
-    public function insert($data) {
-        
-    }
-
-    public function update($id, $data) {
-        
-    }
-
-    public function delete($id) {
-        
-    }
 }

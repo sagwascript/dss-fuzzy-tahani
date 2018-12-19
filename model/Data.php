@@ -88,6 +88,16 @@ class Data extends BaseModel {
 
         return new Data($result['id'], $result['nama'], $result['masa_kerja'], $result['usia'], $result['gaji'], $result['jumlah_tanggungan']);
     }
+
+    public function getLastInsertedId() {
+        $query = "SELECT id FROM tbl_data ORDER BY id DESC LIMIT 1";
+        $stmt = self::getDB()->prepare($query);
+        $stmt->execute();
+
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return $result['id'];
+    }
     
     public function insert($data) {
         $query = "INSERT INTO tbl_data(nama, masa_kerja, usia, gaji, jumlah_tanggungan) VALUES (:nama, :masa_kerja, :usia, :gaji, :jumlah_tanggungan)";

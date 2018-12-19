@@ -89,7 +89,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="hasil">
                         <i class="ti-panel"></i>
                         <p>Defuzzifikasi</p>
                     </a>
