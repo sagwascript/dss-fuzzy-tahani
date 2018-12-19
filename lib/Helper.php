@@ -16,7 +16,7 @@ class Helper {
         } else if ($himpunan['nama_himpunan'] == 'Parobaya') {
             if ($usia <= $himpunan['bawah'] or $usia >= $himpunan['atas']) {
                 $derajat_keanggotaan = 0;
-            } else if ($usia >= $himpunan['bawah'] || $usia <= $himpunan['tengah']) {
+            } else if ($usia >= $himpunan['bawah'] && $usia <= $himpunan['tengah']) {
                 $derajat_keanggotaan = ($usia - $himpunan['bawah']) / ($himpunan['tengah'] - $himpunan['bawah']);
             } else if ($usia >= $himpunan['tengah'] && $usia <= $himpunan['atas']) {
                 $derajat_keanggotaan = ($himpunan['atas'] - $usia) / ($himpunan['atas'] - $himpunan['tengah']);

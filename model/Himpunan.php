@@ -81,7 +81,7 @@ class Himpunan extends BaseModel {
     }
 
     public function getByKelompok($kelompok) {
-        $query = "SELECT * FROM tbl_himpunan WHERE kelompok = :kelompok";
+        $query = "SELECT * FROM tbl_himpunan WHERE kelompok = :kelompok ORDER BY id";
         $stmt = self::getDB()->prepare($query);
         $stmt->bindValue(':kelompok', $kelompok);
         $stmt->execute();

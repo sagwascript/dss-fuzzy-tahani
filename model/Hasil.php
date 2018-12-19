@@ -48,7 +48,7 @@ class Hasil extends BaseModel {
     }
 
     public function getByIdCalonPenerima($id) {
-        $query = "SELECT * FROM hasil_fuzzy WHERE id_calon_penerima = :id_calon_penerima";
+        $query = "SELECT * FROM hasil_fuzzy WHERE id_calon_penerima = :id_calon_penerima ORDER BY id";
         $stmt = self::getDB()->prepare($query);
         $stmt->bindValue(':id_calon_penerima', $id);
         $stmt->execute();
@@ -87,6 +87,14 @@ class Hasil extends BaseModel {
         $stmt->bindValue(':id_himpunan', $data['id_himpunan']);
         $stmt->bindValue(':id_calon_penerima', $data['id_calon_penerima']);
         $stmt->bindValue(':f', $data['f']);
+
+        return $stmt->execute();
+    }
+
+    public function delete($id) {
+        $query = "DELETE FROM hasil_fuzzy WHERE id_calon_penerima = :id";
+        $stmt = self::getDB()->prepare($query);
+        $stmt->bindValue(':id', $id);
 
         return $stmt->execute();
     }

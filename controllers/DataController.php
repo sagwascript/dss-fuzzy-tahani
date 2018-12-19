@@ -28,7 +28,6 @@ class DataController extends BaseController {
             $field_all = ['masa_kerja', 'usia', 'gaji', 'jumlah_tanggungan'];
             for ($i = 1; $i <= 4; $i++) {
                 $himpunan = Himpunan::getByKelompok($i);
-
                 $field = $data[$field_all[$i-1]];
                 foreach ($himpunan as $himp) {
                     $idHimpunan = $himp->getIdHimpunan();
@@ -37,19 +36,14 @@ class DataController extends BaseController {
                     $paramHimpunan['tengah'] = $himp->getTengah();
                     $paramHimpunan['atas'] = $himp->getAtas();
 
-                    switch($i) {
-                        case 1:
-                            $f = Helper::fungsiKeanggotaanMasaKerja($field, $paramHimpunan);        
-                            break;
-                        case 2:
-                            $f = Helper::fungsiKeanggotaanUsia($field, $paramHimpunan);        
-                            break;
-                        case 3:
-                            $f = Helper::fungsiKeanggotaanGaji($field, $paramHimpunan);        
-                            break;
-                        case 4:
-                            $f = Helper::fungsiKeanggotaanTanggungan($field, $paramHimpunan);        
-                            break;
+                    if ($i == 1) {
+                        $f = Helper::fungsiKeanggotaanMasaKerja($field, $paramHimpunan);        
+                    } else if ($i == 2) {
+                        $f = Helper::fungsiKeanggotaanUsia($field, $paramHimpunan);        
+                    } else if ($i == 3) {
+                        $f = Helper::fungsiKeanggotaanGaji($field, $paramHimpunan);        
+                    } else if ($i == 4) {
+                        $f = Helper::fungsiKeanggotaanTanggungan($field, $paramHimpunan);        
                     }
                     
                     Hasil::insert(['id_himpunan' => $idHimpunan, 'id_calon_penerima' => $idCalonPenerima, 'f' => $f]);
@@ -79,6 +73,7 @@ class DataController extends BaseController {
     public function delete() {
         $id = $_GET['id'];
         if (Data::delete($id)) {
+            Hasil::delete($id);
             Router::redirect();
         }
     }
