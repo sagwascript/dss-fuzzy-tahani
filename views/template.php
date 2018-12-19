@@ -65,25 +65,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="fuzzifikasi/masa_kerja">
                         <i class="ti-panel"></i>
                         <p>Fuzzifikasi Masa Kerja</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="fuzzifikasi/usia">
                         <i class="ti-panel"></i>
                         <p>Fuzzifikasi Usia</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="fuzzifikasi/gaji">
                         <i class="ti-panel"></i>
                         <p>Fuzzifikasi Gaji</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="fuzzifikasi/tanggungan">
                         <i class="ti-panel"></i>
                         <p>Fuzzifikasi Tanggungan</p>
                     </a>
