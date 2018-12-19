@@ -66,7 +66,7 @@ class Data extends BaseModel {
     }
 
     public function getAll() {
-        $query = "SELECT * FROM tbl_data";
+        $query = "SELECT * FROM tbl_data ORDER BY id";
         $stmt = self::getDB()->prepare($query);
         $stmt->execute();
 
