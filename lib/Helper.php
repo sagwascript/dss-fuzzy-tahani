@@ -108,4 +108,92 @@ class Helper {
         return $derajat_keanggotaan;
     }
 
+    public static function generateKeterangan($maxF) {
+        $himpunan = ['Baru' => 1, 'Lama' => 2, 'Muda' => 3, 'Parobaya' => 4, 'Tua' => 5, 'Rendah' => 6, 'Sedang' => 7, 'Tinggi' => 8, 'Sedikit' => 9, 'Banyak' => 10];
+        $masa_kerja = $maxF[0];
+        $usia = $maxF[1];
+        $gaji = $maxF[2];
+        $tanggungan = $maxF[3];
+
+        if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Rendah'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Tidak Mampu';
+        } 
+        
+        else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Tidak Mampu';
+        } else if ($gaji == $himpunan['Sedang'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Tidak Mampu';
+        }
+        
+        else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Sedikit'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Muda'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Parobaya'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Baru']) {
+            $keterangan = 'Pra-Sejahtera';
+        } else if ($gaji == $himpunan['Tinggi'] && $tanggungan == $himpunan['Banyak'] && $usia == $himpunan['Tua'] && $masa_kerja == $himpunan['Lama']) {
+            $keterangan = 'Pra-Sejahtera';
+        }
+
+        return $keterangan;
+    }
+
 }

@@ -62,6 +62,25 @@ class Hasil extends BaseModel {
         return $result;
     }
 
+    public function getMaxFById($id) {
+        $id_range = [[1, 2], [3, 5], [6, 8], [9, 10]];
+
+        $max = array();
+        for ($i = 0; $i < count($id_range); $i++) {
+            $batasBawah = $id_range[$i][0];
+            $batasAtas = $id_range[$i][1];
+            $query = "SELECT id_himpunan FROM hasil_fuzzy WHERE id_himpunan >= $batasBawah AND id_himpunan <= $batasAtas AND id_calon_penerima = :id_calon_penerima ORDER BY f DESC LIMIT 1";
+            $stmt = self::getDB()->prepare($query);
+            $stmt->bindValue(':id_calon_penerima', $id);
+            $stmt->execute();
+
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+            array_push($max, $result['id_himpunan']);
+        }
+
+        return $max;
+    }
+
     public function insert($data) {
         $query = "INSERT INTO hasil_fuzzy(id_himpunan, id_calon_penerima, f) VALUES (:id_himpunan, :id_calon_penerima, :f)";
         $stmt = self::getDB()->prepare($query);
@@ -72,11 +91,4 @@ class Hasil extends BaseModel {
         return $stmt->execute();
     }
 
-    public function update($id, $data) {
-        
-    }
-
-    public function delete($id) {
-        
-    }
 }

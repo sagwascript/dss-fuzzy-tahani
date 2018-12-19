@@ -3,6 +3,7 @@
 namespace controllers;
 
 use lib\Router;
+use lib\Helper;
 use model\Data;
 use model\Himpunan;
 use model\Hasil;
@@ -15,10 +16,12 @@ class HasilController extends BaseController {
 
         foreach ($data as $d) {
             $hasil = Hasil::getByIdCalonPenerima($d->getIdData());
+            $maxF = Hasil::getMaxFById($d->getIdData());
             $wrap = [$d->getNama(), $d->getMasaKerja(), $d->getUsia(), $d->getGaji(), $d->getJumlahTanggungan()];
             foreach ($hasil as $h) {
                 array_push($wrap, $h->getF());
             }
+            array_push($wrap, Helper::generateKeterangan($maxF));
             $wrapData[$d->getIdData()] = $wrap;
         }
         $viewModel['data'] = $wrapData;

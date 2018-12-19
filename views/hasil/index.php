@@ -49,7 +49,7 @@
                 <td><?php echo $res[12]; ?></td>
                 <td><?php echo $res[13]; ?></td>
                 <td><?php echo $res[14]; ?></td>
-                <td>KETERANGAN</td>
+                <td><?php echo $res[15]; ?></td>
             </tr>
         <?php
             }
