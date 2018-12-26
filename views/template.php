@@ -115,7 +115,7 @@
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                   <i class="ti-settings"></i>
-									<p>Utilitas</p>
+									<p>Pengaturan</p>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">

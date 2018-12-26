@@ -15,6 +15,7 @@
         </tr>
         <?php
             $no = 1;
+            setlocale(LC_MONETARY, 'id_ID.utf8');
             foreach ($viewModel as $data) {
         ?>
                 <tr>
@@ -22,8 +23,8 @@
                     <td><?php echo $data->getNama(); ?></td>
                     <td><?php echo $data->getMasaKerja(); ?> Tahun</td>
                     <td><?php echo $data->getUsia(); ?> Tahun</td>
-                    <td>Rp. <?php echo $data->getGaji(); ?></td>
-                    <td><?php echo $data->getJumlahTanggungan(); ?></td>
+                    <td class="text-right">Rp. <?php echo number_format($data->getGaji(),2,",","."); ?></td>
+                    <td><?php echo $data->getJumlahTanggungan(); ?> Orang</td>
                     <td>
                         <a href="data/edit/<?php echo $data->getIdData(); ?>">Ubah</a>
                         <a href="data/delete/<?php echo $data->getIdData(); ?>">Hapus</a>

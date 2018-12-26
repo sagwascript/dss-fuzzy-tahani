@@ -6,11 +6,11 @@
         <tr>
             <th rowspan="2">No.</th>
             <th rowspan="2">Nama</th>
-            <th colspan="2" class="text-center">Derajat Keanggotaan</th>
+            <th colspan="2" class="text-center">Derajat Keanggotaan Tanggungan</th>
         </tr>
         <tr>
-            <th class="text-center">Sedikit</th>
-            <th class="text-center">Banyak</th>
+            <th class="text-center" style="width:25%">Sedikit</th>
+            <th class="text-center" style="width:25%">Banyak</th>
         </tr>
         <?php
             $no = 1;

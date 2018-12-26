@@ -6,10 +6,6 @@
         <tr>
             <th rowspan="2">No.</th>
             <th rowspan="2">Nama</th>
-            <th rowspan="2">Masa Kerja</th>
-            <th rowspan="2">Usia</th>
-            <th rowspan="2">Gaji</th>
-            <th rowspan="2">Jumlah Tanggungan</th>
             <th colspan="2" class="text-center">Derajat Keanggotaan Masa Kerja</th>
             <th colspan="3" class="text-center">Derajat Keanggotaan Usia</th>
             <th colspan="3" class="text-center">Derajat Keanggotaan Gaji</th>
@@ -35,10 +31,6 @@
             <tr>
                 <td><?php echo $no++; ?></td>
                 <td><?php echo $res[0]; ?></td>
-                <td><?php echo $res[1]; ?></td>
-                <td><?php echo $res[2]; ?></td>
-                <td><?php echo $res[3]; ?></td>
-                <td><?php echo $res[4]; ?></td>
                 <td><?php echo $res[5]; ?></td>
                 <td><?php echo $res[6]; ?></td>
                 <td><?php echo $res[7]; ?></td>

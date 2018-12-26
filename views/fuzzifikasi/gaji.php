@@ -6,7 +6,7 @@
         <tr>
             <th rowspan="2">No.</th>
             <th rowspan="2">Nama</th>
-            <th colspan="3" class="text-center">Derajat Keanggotaan</th>
+            <th colspan="3" class="text-center">Derajat Keanggotaan Gaji</th>
         </tr>
         <tr>
             <th class="text-center">Rendah</th>

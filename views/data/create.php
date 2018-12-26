@@ -8,7 +8,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Nama</label>
-                    <input name="nama" type="text" class="form-control border-input">
+                    <input name="nama" type="text" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Masa Kerja</label>
-                    <input name="masa_kerja" type="text" class="form-control border-input">
+                    <input name="masa_kerja" type="number" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Usia</label>
-                    <input name="usia" type="text" class="form-control border-input">
+                    <input name="usia" type="number" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Gaji</label>
-                    <input name="gaji" type="text" class="form-control border-input">
+                    <input name="gaji" type="number" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Jumlah Tanggungan</label>
-                    <input name="jumlah_tanggungan" type="text" class="form-control border-input">
+                    <input name="jumlah_tanggungan" type="number" class="form-control border-input" required>
                 </div>
             </div>
         </div>

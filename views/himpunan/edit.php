@@ -8,7 +8,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Nama Himpunan</label>
-                    <input name="nama_himpunan" type="text" value="<?php echo $viewModel->getNamaHimpunan(); ?>" class="form-control border-input">
+                    <input name="nama_himpunan" type="text" value="<?php echo $viewModel->getNamaHimpunan(); ?>" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Bawah</label>
-                    <input name="bawah" type="text" value="<?php echo $viewModel->getBawah(); ?>" class="form-control border-input">
+                    <input name="bawah" type="number" value="<?php echo $viewModel->getBawah(); ?>" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Tengah</label>
-                    <input name="tengah" type="text" value="<?php echo $viewModel->getTengah(); ?>" class="form-control border-input">
+                    <input name="tengah" type="number" value="<?php echo $viewModel->getTengah(); ?>" class="form-control border-input" required>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Atas</label>
-                    <input name="atas" type="text" value="<?php echo $viewModel->getAtas(); ?>" class="form-control border-input">
+                    <input name="atas" type="number" value="<?php echo $viewModel->getAtas(); ?>" class="form-control border-input" required>
                 </div>
             </div>
         </div>
